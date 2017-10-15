@@ -1,0 +1,57 @@
+{
+  "name": "m2m-demo",
+  "email": "alexandre.demeure@inria.fr",
+  "url": "http://iihm.imag.fr/demeure",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "update": "webdriver-manager update",
+    "pre-protractor": "webdriver-manager update --standalone --versions.standalone=3.3.1 --versions.chrome=2.28",
+    "protractor": "protractor ./protractor.config.js",
+    "server": "node ./miniServerHTTP.js",
+    "compile": "node ./node_modules/typescript/bin/tsc",
+    "lint": "node ./node_modules/tslint/bin/tslint --config \"./tslint.json\" \"ts/**/*.ts\"",
+    "watch:lint": "node ./node_modules/chokidar-cli/index.js ./ts/**/*.ts -c \"npm run lint\" --initial --verbose",
+    "all": "npm-run-all --parallel server watch:lint compile"
+  },
+  "dependencies": {
+    "@angular/common": "^4.4.4",
+    "@angular/compiler": "^4.4.4",
+    "@angular/core": "^4.4.4",
+    "@angular/forms": "^4.4.4",
+    "@angular/http": "^4.4.4",
+    "@angular/platform-browser": "^4.4.4",
+    "@angular/platform-browser-dynamic": "^4.4.4",
+    "@angular/router": "^4.4.4",
+    "core-js": "^2.5.1",
+    "express": "^4.16.1",
+    "rxjs": "^5.4.3",
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.18"
+  },
+  "devDependencies": {
+    "@types/jasminewd2": "^2.0.3",
+    "chokidar": "^1.7.0",
+    "chokidar-cli": "^1.2.0",
+    "codelyzer": "^3.2.1",
+    "glob": "^7.1.2",
+    "jasmine-core": "^2.8.0",
+    "jasmine-reporters": "^2.2.1",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.1.1",
+    "protractor": "^5.1.2",
+    "protractor-html-hierarchical-reporter": "^1.6.0",
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  }
+}
